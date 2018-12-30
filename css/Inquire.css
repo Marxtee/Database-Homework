@@ -1,6 +1,6 @@
 body{
     /* background     : url("./back.jpg"); */
-    background     : url("../image/back.jpg");
+    background     : url("../image/22.jpg");
     color          : #000;
     display        : flex;
     justify-content: center;
@@ -8,6 +8,17 @@ body{
     margin         : 0;
     position       : relative;
 }
+
+.main{
+    width    : 70vw;
+    height   : 60vh;
+    color    : #d37132;
+    position : absolute;
+    top      : 200px;
+    left     : 500px;
+    font-size: 2rem;
+}
+
 
 h1{
     color : aliceblue;

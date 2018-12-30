@@ -3,7 +3,7 @@ html{
 }
 body{
     /* background     : url("./back.jpg"); */
-    background     : url("../image/back.jpg");
+    background     : url("../image/22.jpg");
     color          : #000;
     display        : flex;
     justify-content: center;
@@ -31,6 +31,10 @@ label{
     top     : 100px;
 }
 
+h1{
+    color : aliceblue;
+    margin: 100px;
+}
 
 #postForm{
     position: absolute;
@@ -51,10 +55,6 @@ input{
     padding-left : .3rem;
     padding-left : .3rem;
     text-align   : center;
-}
-
-.submit:visited{
-    background-color: #000;
 }
 
 .submit,.reset{

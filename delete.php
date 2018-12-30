@@ -1,6 +1,6 @@
 <?php
     $conn = mysqli_connect('localhost','root','12345678','homework');
-
+    
     $id = mysqli_real_escape_string($conn,$_POST['id']);
     $name = mysqli_real_escape_string($conn,$_POST['name']);
     $idCard = mysqli_real_escape_string($conn,$_POST['idCard']);
