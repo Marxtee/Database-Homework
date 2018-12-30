@@ -23,6 +23,7 @@ label{
     color: #fff;
 }
 
+
 input{
     width        : 20rem;
     height       : 2rem;
@@ -32,10 +33,6 @@ input{
     padding-left : .3rem;
     padding-left : .3rem;
     text-align   : center;
-}
-
-.submit:visited{
-    background-color: #000;
 }
 
 .submit,.reset{

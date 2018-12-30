@@ -5,20 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/delete.css">
-    <link rel="shortcut icon" href="rocken.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./image/rocken.ico" type="image/x-icon" />
     <title>Delete</title>
 </head>
 <body>
     <br><br>
     <h1>选择按何种方式删除</h1>
-    <form id="postForm" action="" method="POST">
+    <form id="postForm">
         <label for="id">员工编号</label>
-        <input type="text" name="id" id="id"><br>
+        <input type="text" id="id"><br>
         <label for="name">员工姓名</label>
-        <input type="text" name="name" id="name"><br>
+        <input type="text" id="name"><br>
         <label for="idCard">身份证号</label>
-        <input type="text" name="idCard" id="idCard"><br>
+        <input type="text" id="idCard"><br>
         <input type="submit" value="提交" class="submit">
-</form>
+    </form>
+    <script>
+        document.getElementById('postForm').addEventListener('submit',postForm);
+
+        function postForm(e){
+            e.preventDefault();
+            var name = document.getElementById("name").value;
+            var id = document.getElementById("id").value;
+            var idCard = document.getElementById("idCard").value;
+            var params= "name="+name+"&id="+id+"&idCard="+idCard;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST','delete.php',true);
+            xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+            xhr.onload = function(){
+                console.log(this.responseText);
+            }
+            xhr.send(params);
+            alert('删除成功');
+        }
+    </script>
 </body>
 </html>

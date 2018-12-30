@@ -1,39 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Inquire.css">
-    <link rel="shortcut icon" href="rocken.ico" type="image/x-icon" />
-    <title>Inquire</title>
-</head>
-<body>
-    <div class="body">
-        <table>
-            <tr id="users">
-                <th>编号</th>
-                <th>姓名</th>
-                <th>身份证</th>
-                <th>是否空闲</th>
-                <th>健康状况</th>
-            </tr>
-            <tr>
-            <?php
-                $conn = mysqli_connect("localhost","root","12345678","homework");
+<?php
+$conn = mysqli_connect('localhost','root','12345678','homework')
+    or die('Error connecting to MySql server');
+$id = $_POST['id'];
+$name = $_POST['name'];
+$idCard = $_POST['idCard'];
+$isFree = $_POST['isFree'];
+$isHealth = $_POST['isHealth'];
+if(!empty($id)){
+    $query = "SELECT * FROM sexworker WHERE id='$id'";
+    $result = mysqli_query($conn,$query);
+}
+if(!empty($name)){
+    $query = "SELECT * FROM sexworker WHERE name='$name'";
+    $result = mysqli_query($conn,$query);
+}
+if(!empty($idCard)){
+    $query = "SELECT * FROM sexworker WHERE idCard='$idCard'";
+    $result = mysqli_query($conn,$query);
+}
+if(!empty($isFree)){
+    $query = "SELECT * FROM sexworker WHERE isFree='$isFree'";
+    $result = mysqli_query($conn,$query);
+}
+if(!empty($isHealth)){
+    $query = "SELECT * FROM sexworker WHERE isHealth='$isHealth'";
+    $result = mysqli_query($conn,$query);
+}
 
-                $query = 'SELECT * FROM sexworker';
 
-                $result = mysqli_query($conn,$query);
+while($row = mysqli_fetch_array($result)){
+    echo '<input id="check" type="checkbox" value="'.$row['id'].'" name="todelete[]"/>';
+    echo '<input disabled="disabled" type="text" value="'.$row['id'].'"/>';
+    echo '<input id="name" disabled="disabled" type="text" value="'.$row['name'].'"/>';
+    echo '<input disabled="disabled" id="idCard" type="text" value="'.$row['idCard'].'"/>';
+    echo '<input disabled="disabled" type="text" value="'.$row['isFree'].'"/>';
+    echo '<input disabled="disabled" type="text" value="'.$row['isHealth'].'"/>';
+    echo '<br/>';
+}
+mysqli_close($conn);
 
-                $users = mysqli_fetch_all($result,MYSQLI_ASSOC);
-
-                echo json_encode($users);
-            ?>
-            <td><?php echo $?></td>
-            </tr>
-        </table>
-    </div>
-</body>
-</html>
-
+?>

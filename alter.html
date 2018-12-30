@@ -4,28 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/alter.css">
-    <link rel="shortcut icon" href="rocken.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./image/rocken.ico" type="image/x-icon" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Alert</title>
 </head>
 <body>
     <div class="head">
-        <label for="id">请输入员工编号:</label>
-        <input type="text" id="id"/>
+        <label for="id1">请输入员工编号:</label>
+        <input type="text" id="id1"/>
     </div>
     <form id="postForm" action="">
-            <label for="id">员工编号</label>
-            <input type="text" name="id" id="id"><br>
-            <label for="name">员工姓名</label>
-            <input type="text" name="name" id="name"><br>
-            <label for="idCard">身份证号</label>
-            <input type="text" name="idCard" id="idCard"><br>
-            <label for="isFree">是否空闲</label>
-            <input type="text" name="isFree" id="isFree"><br>
-            <label for="isHealth">健康状况</label>
-            <input type="text" name="isHealth" id="isHealth"><br>
-            <input type="submit" value="提交" class="submit">
-            <input type="reset" value="重置" class="reset">
-        </form>
+        <label for="id">员工编号</label>
+        <input type="text" id="id"><br>
+        <label for="name">员工姓名</label>
+        <input type="text" id="name"><br>
+        <label for="idCard">身份证号</label>
+        <input type="text" id="idCard"><br>
+        <label for="isFree">是否空闲</label>
+        <input type="text" id="isFree"><br>
+        <label for="isHealth">健康状况</label>
+        <input type="text" id="isHealth"><br>
+        <input type="submit" value="提交" class="submit">
+        <input type="reset" value="重置" class="reset">
+    </form>
+    <script>
+        document.getElementById('postForm').addEventListener('submit',postForm);
+        
+        function postForm(e){
+            e.preventDefault();
+            var name = document.getElementById("name").value;
+            var id1 = document.getElementById("id1").value;
+            var id = document.getElementById("id").value;
+            var idCard = document.getElementById("idCard").value;
+            var isFree = document.getElementById("isFree").value;
+            var isHealth = document.getElementById("isHealth").value;
+            var params= "id1="+id1+"&name="+name+"&id="+id+"&idCard="+idCard+"&isFree="+isFree+"&isHealth="+isHealth;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST',"alter.php",true);
+            xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+            xhr.onload = function(){
+                console.log(this.responseText);
+            }
+            xhr.send(params);
+            alert('修改成功');
+        }
+    </script>
 </body>
 </html>

@@ -1,27 +1,22 @@
 body{
     /* background     : url("./back.jpg"); */
-    background     : url("../image/back.jpg");
+    background     : url("../image/22.jpg");
     color          : #000;
     display        : flex;
     justify-content: center;
-    width          : 100%;
+    max-width      : 100vw;
     margin         : 0;
     position       : relative;
 }
 
-h1{
-    color : aliceblue;
-    margin: 100px;
-}
-
-#postForm{
-    position: absolute;
-    top     : 170px;
-}
-
-label{
-    width: 500px;
-    color: #fff;
+.main{
+    width    : 70vw;
+    height   : 60vh;
+    color    : #d37132;
+    position : absolute;
+    top      : 200px;
+    left     : 500px;
+    font-size: 2rem;
 }
 
 input{
@@ -35,13 +30,7 @@ input{
     text-align   : center;
 }
 
-#postForm input{
-    width: 10rem;
-}
 
-#postForm .in{
-    width: 18rem;
-}
 
 #idCard{
     width: 14rem;
@@ -54,9 +43,4 @@ input{
 #check{
     position: relative;
     top     : 10px;
-}
-
-#users{
-    position: absolute;
-    top     : 550px;
 }
