@@ -25,3 +25,10 @@
 
 
 因为期末让考试烦的实在受不了，其中有一些有关跨域的东西实在懒得整了就换了个思路，干脆跳转页面，不要ajax了。小朋友们不要和我学啊～～ 😳 😳
+
+### 交流
+
+**临渊羡鱼，不如退而结网**
+我是Rocken，我们一起进步，共勉
+
+<div align=center><img height="400" src="http://oss.cun-xu.cn/image/wechat/QR.png"/></div>
