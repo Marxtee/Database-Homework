@@ -1,4 +1,4 @@
-## Database Homework
+# Database Homework
 
 这个是大二上学期的数据库的结课作业了，用的html、JavaScript和php简单的实现了一个所谓的`“鸡窝”管理系统`，还好老师的要求不高 😑 😑 😑 😑 🙄
 
